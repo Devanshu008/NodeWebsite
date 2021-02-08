@@ -1,6 +1,7 @@
 const express = require("express");
 require("./db/conn")
-const User = require("./models/userMessage")
+const User = require("./models/userMessage");
+const Register = require("./models/login");
 const app = express();
 const path = require("path");
 const port = process.env.PORT || 3000;
@@ -23,6 +24,9 @@ hbs.registerPartials(partialsPath);
 app.get("/", (req, res) => {
     res.render("login")
 });
+app.get("/login", (req, res) => {
+    res.render("login")
+});
 // app.get("/contact", (req, res) => {
 //     res.render("contact")
 // });
@@ -36,8 +40,37 @@ app.post("/contact", async(req, res) => {
         res.status(500).send(error);
     }
 });
-app.get("/login", (req, res) => {
-    res.render("login")
+app.post("/login", async(req, res) => {
+    try {
+        const password = req.body.password;
+        const cPassword = req.body.cPassword;
+        if (password === cPassword) {
+            const registerDate = new Register(req.body);
+            const registered = await registerDate.save();
+            res.status(201).render("index");
+        } else {
+            res.send("Password are not same");
+        }
+
+    } catch (error) {
+        res.status(500).send(error);
+    }
+
+});
+app.post("/homepage", async(req, res) => {
+    try {
+        const userEmail = req.body.userEmail;
+        const userPassword = req.body.userPassword;
+        const uEmail = await Register.findOne({ email: userEmail });
+        if (uEmail.password === userPassword) {
+            res.status(201).render('index');
+        } else {
+            res.send("Invalid login details");
+        }
+
+    } catch (error) {
+        res.status(500).send("Invalid login details");
+    }
 });
 app.get("/homepage", (req, res) => {
     res.render("index")
