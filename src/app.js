@@ -21,7 +21,7 @@ hbs.registerPartials(partialsPath);
 
 
 app.get("/", (req, res) => {
-    res.render("index")
+    res.render("login")
 });
 // app.get("/contact", (req, res) => {
 //     res.render("contact")
@@ -35,6 +35,12 @@ app.post("/contact", async(req, res) => {
     } catch (error) {
         res.status(500).send(error);
     }
+});
+app.get("/login", (req, res) => {
+    res.render("login")
+});
+app.get("/homepage", (req, res) => {
+    res.render("index")
 });
 app.listen(port, () => {
     console.log(`Server is running into ${port}....`)
