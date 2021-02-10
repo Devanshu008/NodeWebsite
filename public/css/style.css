@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+/* @import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss'; */
+
 * {
     font-family: "Poiret One", cursive;
     font-weight: bold;

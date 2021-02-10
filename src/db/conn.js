@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/DWeb", {
+mongoose.connect(process.env.DB_KEY, {
     useCreateIndex: true,
     useUnifiedTopology: true,
     useNewUrlParser: true,

@@ -11,14 +11,14 @@
 </head>
 
 <body>
-   <div class="container-fluid navbar-style py-3">
+   {{!-- <div class="container-fluid navbar-style py-3">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#" id="logo">Devanshu G</a>
     </div>
   </div>
-</div>
+</div> --}}
     <div class="container-form">
         <div class="forms-container">
             <div class="signin-signup">
@@ -54,19 +54,19 @@
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="name" />
+                        <input type="text" placeholder="Username" name="name" required/>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" />
+                        <input type="email" placeholder="Email" name="email" required/>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password" />
+                        <input type="password" placeholder="Password" name="password" required/>
                     </div>
                      <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password" name="cPassword" />
+                        <input type="password" placeholder="Confirm Password" name="cPassword" required/>
                     </div>
                     <input type="submit" class="btn" value="Sign up" />
                      {{!-- <a href="/homepage"  class="btn solid" />Sign up</a> --}}
@@ -119,7 +119,7 @@
     {{!-- {{>footer}} --}}
       <script src="../jq/jquery.js"></script>
      <script src="../js/bootstrap.js"></script>
-<script src="js/main.js"></script>
+        <script src="js/main.js"></script>
    
 </body>
 

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+/* @import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss'; */
+
 * {
     margin: 0;
     padding: 0;
@@ -129,7 +133,7 @@ form.sign-in-form {
     border: none;
     line-height: 1;
     font-weight: 600;
-    font-size: 1.9rem;
+    font-size: 1.4rem;
     color: #333;
 }
 
@@ -362,7 +366,7 @@ form.sign-in-form {
     .btn.transparent {
         width: 110px;
         height: 35px;
-        font-size: 0.7rem;
+        font-size: 1.5rem;
     }
     .container-form:before {
         width: 1500px;
